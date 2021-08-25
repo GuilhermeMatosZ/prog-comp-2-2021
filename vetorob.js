@@ -64,6 +64,22 @@ let gerenciaRedeSociais = () => {
     }
 
     // exe3) o usuário informa o login do usuário e o programa retorna qnts posts ele fez.
+    let login = prompt(`Informe o login do usuário desejado`)
+        // procurar o login no vetor de usuários
+        let somaPosts = 0
+        let achou = false // não encontrei o usuário
+        for(let i=0;i<5;i++){
+        if (login == vetorUsuarios[i].login){ // achei o usuário procurado
+            somaPosts = somaPosts + vetorUsuarios[i].qtdeposts
+            achou = true // achou o usuário
+        }
+    }
+    if (achou){
+        alert(`O usuário com o login ${login} realizou ${somaPosts}`)
+    }
+    else {
+        alert(`Usuário não encontrado`)
+    }
     // exe4) o programa retorna quantos posts forma feitos por cada usuários 
 
 }
