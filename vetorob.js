@@ -81,7 +81,27 @@ let gerenciaRedeSociais = () => {
         alert(`Usuário não encontrado`)
     }
     // exe4) o programa retorna quantos posts forma feitos por cada usuários 
+    let vetorUsuarioPosts = []
+    for (let i=0;i<5;i++){ // para cada usuário do vetor
 
+        let achou = false // não achou
+
+        for(let j=0;j<vetorUsuarioPosts.length;j++) { // verifica se o usuário já existe
+
+            if (vetorUsuarios[i].login == vetorUsuarioPosts[j].login) { // usuário já existe
+                // soma a qtde de posts do usuário
+                vetorUsuarioPosts[j].qtde = vetorUsuarioPosts[j].qtde + vetorUsuarios.qtdeposts
+                achou = true
+            }
+        }
+        // usuário ainda não existe no vetor vetorusuariosposts, então vamos criar
+        if (!achou) { // vamos cariar usuário no vetor
+                vetorUsuarioPosts.push({
+                    login: vetorUsuarios[i].login,
+                    qtde: vetorUsuarios[i].qtdeposts
+                })
+        }
+    }  
 }
 // 2 vetor onde coloca os dados, dps faz outro vetor antes de inserir os dados no outro vetor tem que verificar no de cima tudo que tem dentro do de cima.
 
